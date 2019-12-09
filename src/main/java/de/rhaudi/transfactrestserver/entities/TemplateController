@@ -1,0 +1,71 @@
+package de.rhaudi.transfactrestserver.entities.[template];
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class [Template]Controller extends ServerController{
+
+    @Autowired
+    [Template]Rep [template]Rep;
+
+    //Get All
+    @GetMapping("/[template]")
+    public List<[Template]Entity> getAll[Template]() {
+        return [template]Rep.findAll();
+    }
+
+    //Get Single
+    @GetMapping("/[template]/{id}")
+    public [Template]Entity getById(@PathVariable(value = "id") Long id) {
+        return [template]Rep.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException());
+    }
+    /*
+    //Update
+    @PutMapping("/[template]/{id}")
+    public [Template]Entity updateNote(@PathVariable(value = "id") Long id,
+                                            @Valid @RequestBody [Template]Entity [template]Details) {
+
+        [Template]Entity [template]Entity = [template]Rep.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException());
+
+        //Objekt ab hier bearbeiten
+        //[template]Entity.setAsAnweisung([template]Details.getAsAnweisung());
+        //Ende
+
+        [Template]Entity entity = [template]Rep.save([template]Entity);
+        return entity;
+    }
+    */
+    /*
+    //Create
+    @PostMapping("/[template]/{id}")
+    public [Template]Entity createNote(@Valid @RequestBody [Template]Entity [template]Details) {
+
+        //Objekt ab hier bearbeiten
+        //[template]Entity.setAsAnweisung([template]Details.getAsAnweisung());
+        //Ende
+
+        [Template]Entity entity = [template]Rep.save([template]Entity);
+        return entity;
+    }
+    */
+    /*
+    // Delete
+    @DeleteMapping("/[template]/{id}")
+    public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long id) {
+        [Template]Entity [template]Entity = [template]Rep.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException());
+        [template]Rep.delete([template]Entity);
+        return ResponseEntity.ok().build();
+    }
+    */
+
+}

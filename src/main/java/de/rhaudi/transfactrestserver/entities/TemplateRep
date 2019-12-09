@@ -1,0 +1,10 @@
+package de.rhaudi.transfactrestserver.entities.[template];
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface [Template]Rep extends JpaRepository<[Template]Entity, Long>, JpaSpecificationExecutor<[Template]Entity> {
+
+        }
